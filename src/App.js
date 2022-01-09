@@ -6,6 +6,7 @@ import { nanoid } from "nanoid"
 
 export default function App() {
     const [gameStarted, setGameStarted] = useState(false)
+    const [queryQuestion, setQueryQuestion] = useState(false)
 
     const [questions, setQuestions] = useState([])
     const [answers, setAnswers] = useState([])
@@ -14,6 +15,10 @@ export default function App() {
 
     function toggleCheckAnswers() {
         setCheckAnswers(!checkAnswers)
+    }
+
+    function toggleQueryQuestion() {
+        setQueryQuestion(!queryQuestion);
     }
     
     function toggleGameStart() {
@@ -42,12 +47,13 @@ export default function App() {
                     }
                 }))
             })
-    },[gameStarted])
+    },[queryQuestion])
 
     function restart() {
         toggleGameStart();
         toggleCheckAnswers();
         setScore(0)
+        toggleQueryQuestion()
     }
 
     return (
