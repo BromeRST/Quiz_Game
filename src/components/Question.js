@@ -2,7 +2,6 @@ import {useState, useEffect} from "react"
 
 const Question = (props) => {
 
-    const [checked, setChecked] = useState([])
     const [shuffledAnswers, setShuffledAnswers] = useState([])
 
     function check(event) {
