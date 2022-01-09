@@ -35,7 +35,7 @@ const Question = (props) => {
                     <input onClick={check} type="radio" name={props.question.question} id={a.id} value={a.correct}/> 
                     <label htmlFor={a.id} className={
                         (a.correct && props.checkAnswers) ? "answer right" : "answer" && 
-                        (props.checkAnswers && !a.correct) && "answer wrong transparent" || "answer"}>{a.value}</label>
+                        (props.checkAnswers && !a.correct) ? "answer wrong transparent" : "answer"}>{a.value}</label>
                     </div>
                 ))}
             </div>
